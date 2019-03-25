@@ -13,6 +13,23 @@ public class ArauraConnectionTest {
         dbConnectTest();
     }
 
+    static void dbConnectTest1(){
+        String hostname = "icwapitrial.cluster-cda6dxb4vzh1.us-east-1.rds.amazonaws.com";
+        String databaseName = "icwapitrial";
+        String username= "icwapiuser-raja";
+        String password= "khanICW333";
+
+        String jdbc_url = "jdbc:mysql://" + hostname + ":3306/" + databaseName;
+
+        DriverManager.setLoginTimeout(60);
+        // Create a connection using the JDBC driver
+        try (Connection conn = DriverManager.getConnection(jdbc_url, username, password)) {
+
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+    }
+
     static void dbConnectTest(){
         String hostname = "test.cluster-cda6dxb4vzh1.us-east-1.rds.amazonaws.com";
         String databaseName = "test";
